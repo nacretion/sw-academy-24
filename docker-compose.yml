@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./.docker/php/Dockerfile
     volumes:
-      - ./src:/var/www/
+      - ./:/var/www
       - ./vendor:/var/www/vendor
     ports:
       - 8000:9000
@@ -42,7 +42,7 @@ services:
     volumes:
       - ./.docker/nginx/logs:/var/log/nginx
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d
-      - ./src:/var/www
+      - ./:/var/www
     networks:
       - sw
 
